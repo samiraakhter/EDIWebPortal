@@ -1,0 +1,758 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model EDIWebPortal.Models.PurchaseOrder
+@{
+    ViewData["Title"] = "Details";
+}
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="EcomSpecialist">
+    <title>Purchase Form</title>
+    <link rel="apple-touch-icon" href="~/app-assets/images/ico/apple-icon-120.png">
+    <link rel="shortcut icon" type="image/x-icon" href="~/app-assets/images/ico/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i%7COpen+Sans:300,300i,400,400i,600,600i,700,700i"
+          rel="stylesheet">
+    <!-- BEGIN VENDOR CSS-->
+    <link rel="stylesheet" type="text/css" href="~/app-assets/css/vendors.css">
+    <!-- END VENDOR CSS-->
+    <!-- BEGIN STACK CSS-->
+    <link rel="stylesheet" type="text/css" href="~/app-assets/css/app.css">
+    <!-- END STACK CSS-->
+    <!-- BEGIN Page Level CSS-->
+    <link rel="stylesheet" type="text/css" href="~/app-assets/css/core/menu/menu-types/horizontal-menu.css">
+    <link rel="stylesheet" type="text/css" href="~/app-assets/css/core/colors/palette-gradient.css">
+    <link rel="stylesheet" type="text/css" href="~/app-assets/css/plugins/forms/validation/form-validation.css">
+
+    <!-- END Page Level CSS-->
+    <link rel="stylesheet" href="~/app-assets/css/bootstrap-select.min.css">
+    <!-- BEGIN Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="~/assets/css/style.css">
+    <!-- END Custom CSS-->
+</head>
+@using (Html.BeginForm())
+{
+    <body class="horizontal-layout horizontal-menu 2-columns   menu-expanded" data-open="hover"
+          data-menu="horizontal-menu" data-col="2-columns">
+        <!-- fixed-top-->
+        <nav class="header-navbar navbar-expand-md navbar navbar-with-menu navbar-static-top navbar-light navbar-border navbar-brand-center">
+            <div class="navbar-wrapper">
+                <div class="navbar-header">
+                    <ul class="nav navbar-nav flex-row">
+                        <li class="nav-item mobile-menu d-md-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu font-large-1"></i></a></li>
+                        <li class="nav-item">
+                            <a class="navbar-brand" href="#">
+                                <img src="~/app-assets/images/logo/logo%20in%20horizontal%20dimension%203.png" alt="ecom logo" width="240">
+                            </a>
+                        </li>
+                        <li class="nav-item d-md-none">
+                            <a class="nav-link open-navbar-container" data-toggle="collapse" data-target="#navbar-mobile"><i class="fa fa-ellipsis-v"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar-container content">
+                    <div class="collapse navbar-collapse" id="navbar-mobile">
+                        <ul class="nav navbar-nav mr-auto float-left">
+                            <!--            <li class="nav-item d-none d-md-block"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu"></i></a></li>-->
+                            <!--            <li class="nav-item d-none d-md-block"><a class="nav-link nav-link-expand" href="#"><i class="ficon ft-maximize"></i></a></li>-->
+                            <li class="nav-item nav-search">
+                                <a class="nav-link nav-link-search" href="#"><i class="ficon ft-search"></i></a>
+                                <div class="search-input">
+                                    <input class="input" type="text" placeholder="Explore Ecom...">
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav float-right">
+                            <li class="dropdown dropdown-language nav-item">
+                                <a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown"
+                                   aria-haspopup="true" aria-expanded="false"><i class="flag-icon flag-icon-gb"></i><span class="selected-language"></span></a>
+                                <div class="dropdown-menu" aria-labelledby="dropdown-flag">
+                                    <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-gb"></i> English</a>
+                                    <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-fr"></i> French</a>
+                                    <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-cn"></i>Chinese</a><a class="dropdown-item"
+                                                                                                                          href="#"><i class="flag-icon flag-icon-de"></i>German</a>
+                                </div>
+                            </li>
+                            <li class="dropdown dropdown-notification nav-item">
+                                <a class="nav-link nav-link-label" href="#" data-toggle="dropdown">
+                                    <i class="ficon ft-bell"></i>
+                                    <span class="badge badge-pill badge-default badge-danger badge-default badge-up">5</span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
+                                    <li class="dropdown-menu-header">
+                                        <h6 class="dropdown-header m-0">
+                                            <span class="grey darken-2">Notifications</span>
+                                            <span class="notification-tag badge badge-default badge-danger float-right m-0">5 New</span>
+                                        </h6>
+                                    </li>
+                                    <li class="scrollable-container media-list">
+                                        <a href="javascript:void(0)">
+                                            <div class="media">
+                                                <div class="media-left align-self-center"><i class="ft-plus-square icon-bg-circle bg-cyan"></i></div>
+                                                <div class="media-body">
+                                                    <h6 class="media-heading">You have new order!</h6>
+                                                    <p class="notification-text font-small-3 text-muted">Lorem ipsum dolor sit amet, consectetuer elit.</p>
+                                                    <small>
+                                                        <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">30 minutes ago</time>
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="javascript:void(0)">
+                                            <div class="media">
+                                                <div class="media-left align-self-center"><i class="ft-download-cloud icon-bg-circle bg-red bg-darken-1"></i></div>
+                                                <div class="media-body">
+                                                    <h6 class="media-heading red darken-1">99% Server load</h6>
+                                                    <p class="notification-text font-small-3 text-muted">Aliquam tincidunt mauris eu risus.</p>
+                                                    <small>
+                                                        <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">Five hour ago</time>
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="javascript:void(0)">
+                                            <div class="media">
+                                                <div class="media-left align-self-center"><i class="ft-alert-triangle icon-bg-circle bg-yellow bg-darken-3"></i></div>
+                                                <div class="media-body">
+                                                    <h6 class="media-heading yellow darken-3">Warning notifixation</h6>
+                                                    <p class="notification-text font-small-3 text-muted">Vestibulum auctor dapibus neque.</p>
+                                                    <small>
+                                                        <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">Today</time>
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="javascript:void(0)">
+                                            <div class="media">
+                                                <div class="media-left align-self-center"><i class="ft-check-circle icon-bg-circle bg-cyan"></i></div>
+                                                <div class="media-body">
+                                                    <h6 class="media-heading">Complete the task</h6>
+                                                    <small>
+                                                        <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">Last week</time>
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="javascript:void(0)">
+                                            <div class="media">
+                                                <div class="media-left align-self-center"><i class="ft-file icon-bg-circle bg-teal"></i></div>
+                                                <div class="media-body">
+                                                    <h6 class="media-heading">Generate monthly report</h6>
+                                                    <small>
+                                                        <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">Last month</time>
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-menu-footer"><a class="dropdown-item text-muted text-center" href="javascript:void(0)">Read all notifications</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown dropdown-notification nav-item">
+                                <a class="nav-link nav-link-label" href="#" data-toggle="dropdown">
+                                    <i class="ficon ft-mail"></i>
+                                    <span class="badge badge-pill badge-default badge-warning badge-default badge-up">3</span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
+                                    <li class="dropdown-menu-header">
+                                        <h6 class="dropdown-header m-0">
+                                            <span class="grey darken-2">Messages</span>
+                                            <span class="notification-tag badge badge-default badge-warning float-right m-0">4 New</span>
+                                        </h6>
+                                    </li>
+                                    <li class="scrollable-container media-list">
+                                        <a href="javascript:void(0)">
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    <span class="avatar avatar-sm avatar-online rounded-circle">
+                                                        <img src="~/app-assets/images/portrait/small/avatar-s-1.png" alt="avatar"><i></i>
+                                                    </span>
+                                                </div>
+                                                <div class="media-body">
+                                                    <h6 class="media-heading">Syed Amir</h6>
+                                                    <p class="notification-text font-small-3 text-muted">I like your portfolio, let's start.</p>
+                                                    <small>
+                                                        <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">Today</time>
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="javascript:void(0)">
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    <span class="avatar avatar-sm avatar-busy rounded-circle">
+                                                        <img src="~/app-assets/images/portrait/small/avatar-s-2.png" alt="avatar"><i></i>
+                                                    </span>
+                                                </div>
+                                                <div class="media-body">
+                                                    <h6 class="media-heading">Tanzeel</h6>
+                                                    <p class="notification-text font-small-3 text-muted">I have seen your work, there is</p>
+                                                    <small>
+                                                        <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">Tuesday</time>
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="javascript:void(0)">
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    <span class="avatar avatar-sm avatar-online rounded-circle">
+                                                        <img src="~/app-assets/images/portrait/small/avatar-s-3.png" alt="avatar"><i></i>
+                                                    </span>
+                                                </div>
+                                                <div class="media-body">
+                                                    <h6 class="media-heading">Jack and Jill</h6>
+                                                    <p class="notification-text font-small-3 text-muted">Can we have call in this week ?</p>
+                                                    <small>
+                                                        <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">Friday</time>
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="javascript:void(0)">
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    <span class="avatar avatar-sm avatar-away rounded-circle">
+                                                        <img src="~/app-assets/images/portrait/small/avatar-s-6.png" alt="avatar"><i></i>
+                                                    </span>
+                                                </div>
+                                                <div class="media-body">
+                                                    <h6 class="media-heading">Eric Alsobrook</h6>
+                                                    <p class="notification-text font-small-3 text-muted">We have project party this saturday.</p>
+                                                    <small>
+                                                        <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">last month</time>
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-menu-footer"><a class="dropdown-item text-muted text-center" href="javascript:void(0)">Read all messages</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown dropdown-user nav-item">
+                                <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
+                                    <span class="avatar avatar-online">
+                                        <img src="~/app-assets/images/portrait/small/avatar-s-1.png" alt="avatar"><i></i>
+                                    </span>
+                                    <span class="user-name">Maahrukkh</span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="#"><i class="ft-user"></i> Edit Profile</a>
+                                    <a class="dropdown-item" href="#"><i class="ft-mail"></i> My Inbox</a>
+                                    <a class="dropdown-item" href="#"><i class="ft-check-square"></i> Task</a>
+                                    <a class="dropdown-item" href="#"><i class="ft-message-square"></i>Chats</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="login.html"><i class="ft-power"></i> Logout</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- ////////////////////////////////////////////////////////////////////////////-->
+        <!-- Horizontal navigation-->
+        <div class="header-navbar navbar-expand-sm navbar navbar-horizontal navbar-fixed navbar-light navbar-without-dd-arrow navbar-shadow menu-border"
+             role="navigation" data-menu="menu-wrapper">
+            <!-- Horizontal menu content-->
+            <div class="navbar-container main-menu-content" data-menu="menu-container">
+                <!-- include ~/includes/mixins-->
+                <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
+                    <li class="dropdown nav-item" data-menu="dropdown">
+                        <a class="dropdown-toggle nav-link" href="index.html" data-toggle="dropdown">
+                            <i class="ft-home"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="dropdown nav-item" data-menu="dropdown">
+                        <a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown"><i class="ft-shopping-cart"></i><span>Purchase</span></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown">
+                                <a class="dropdown-item" href="#" data-toggle="dropdown">Inbox</a>
+                            </li>
+                            <li class="dropdown"><a class="dropdown-item" href="#" data-toggle="dropdown">In Progress</a>
+                            <li class="dropdown">
+                                <a class="dropdown-item" href="#" data-toggle="dropdown">History</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown nav-item" data-menu="dropdown">
+                        <a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown"><i class="fa fa-bullhorn"></i><span>ASN</span></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown">
+                                <a class="dropdown-item" href="#" data-toggle="dropdown">Saved</a>
+                            </li>
+                            <li class="dropdown"><a class="dropdown-item" href="#" data-toggle="dropdown">Errors</a>
+                            <li class="dropdown"><a class="dropdown-item" href="#" data-toggle="dropdown">Sent</a>
+                            <li class="dropdown">
+                                <a class="dropdown-item" href="#" data-toggle="dropdown">History</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown nav-item" data-menu="dropdown">
+                        <a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown"><i class="ft-file-text"></i><span>Invoice</span></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown">
+                                <a class="dropdown-item" href="#" data-toggle="dropdown">Saved</a>
+                            </li>
+                            <li class="dropdown"><a class="dropdown-item" href="#" data-toggle="dropdown">Create Invoice</a>
+                            <li class="dropdown"><a class="dropdown-item" href="#" data-toggle="dropdown">Errors</a>
+                            <li class="dropdown">
+                                <a class="dropdown-item" href="#" data-toggle="dropdown">History</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /horizontal menu content-->
+        </div>
+        <!-- Horizontal navigation-->
+        <div class="app-content content">
+            <div class="content-wrapper">
+                <div class="content-header row">
+                    <div class="content-header-left col-md-6 col-12 mb-2">
+                        <h3 class="content-header-title mb-0">Purchase Form</h3>
+                        <div class="row breadcrumbs-top">
+                            <div class="breadcrumb-wrapper col-12">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item">
+                                        <a href="index.html">Home</a>
+                                    </li>
+                                    <li class="breadcrumb-item active">
+                                        <a href="#">Purchase Form</a>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-header-right col-md-6 col-12">
+                        <div class="media width-250 float-right">
+                            <div class="media-left media-middle">
+                                <div id="sp-bar-total-sales"></div>
+                            </div>
+                            <div class="media-body media-right text-right">
+                                <h3 class="m-0">$5,668</h3>
+                                <span class="text-muted">Sales</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-body">
+                    <!-- Basic form layout section start -->
+                    <section id="horizontal-form-layouts">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title" id="horz-layout-basic">Project Info</h4>
+                                        <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
+                                        <div class="form-group text-center heading-elements">
+                                            <!-- Floating icon button Regular -->
+                                            <a href="#" class="btn btn-float btn-square  btn-float-lg  btn-secondary"><i class="fa fa-thumbs-o-up"></i></a>
+                                            <a href="#" class="btn btn-float btn-square  btn-float-lg  btn-secondary"><i class="fa fa-thumbs-o-down"></i></a>
+                                            <a href="#" class="btn btn-float btn-square  btn-float-lg  btn-secondary"><i class="fa ft-edit"></i></a>
+                                            <a asp-action="CreatePDF" asp-route-id="@Model.Id" class="btn btn-float btn-square  btn-float-lg  btn-secondary"><i class="fa fa-cloud-download"></i></a>
+                                            <a href="#" class="btn btn-float btn-square  btn-float-lg  btn-secondary"><i class="fa fa-refresh"></i></a>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="card-content collpase show">
+                                        <div class="card-body">
+                                            <div class="card-text">
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum ante a turpis sodales tempor. Maecenas gravida vehicula quam, et mollis ligula sodales a. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                            </div>
+                                            <form class="form form-horizontal">
+                                                <div class="form-body">
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 label-control" asp-for="PurchaseOrderOwner">
+                                                            Purchase Order Owner
+                                                        </label>
+                                                        <div class="col-md-6">
+                                                            <input type="text" class="form-control" id="readonlyInput" readonly asp-for="PurchaseOrderOwner">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 label-control" asp-for="PONumber">
+                                                            PO Number
+                                                        </label>
+                                                        <div class="col-md-6">
+                                                            <input asp-for="PONumber" type="text" name="noChar" class="form-control" required data-validation-containsnumber-regex="(\d)+"
+                                                                   data-validation-containsnumber-message="No Characters Allowed, Only Numbers">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 label-control" asp-for="Subject">Subject<span class="required">*</span></label>
+                                                        <div class="col-md-6">
+                                                            <input asp-for="Subject" type="text" class="form-control" name="country_code"
+                                                                   pattern="^[a-zA-Z0-9 ]+$" title="A-Z a-z 0-9 ' '">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 label-control" asp-for="VendorName">
+                                                            Vendor Name<span class="required">*</span>
+                                                        </label>
+                                                        <div class="col-md-6">
+                                                            <input asp-for="VendorName" type="text" class="form-control" name="country_code"
+                                                                   pattern="^[a-zA-Z0-9 ]+$" title="A-Z a-z 0-9 ' '">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 label-control" asp-for="RequisitionNo">
+                                                            Requisition No
+
+                                                        </label>
+                                                        <div class="col-md-6">
+                                                            <input asp-for="RequisitionNo" type="text" class="form-control" name="country_code"
+                                                                   pattern="^[a-zA-Z0-9 ]+$" title="A-Z a-z 0-9 ' '">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 label-control" asp-for="TrackingNumber">
+                                                            Tracking Number
+
+                                                        </label>
+                                                        <div class="col-md-6">
+                                                            <input asp-for="TrackingNumber" type="text" class="form-control" name="country_code"
+                                                                   pattern="^[a-zA-Z0-9 ]+$" title="A-Z a-z 0-9 ' '">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 label-control" asp-for="ContactName">
+                                                            Contact Name
+
+                                                        </label>
+                                                        <div class="col-md-6">
+                                                            <input asp-for="ContactName" type="text" class="form-control" id="readonlyInput" readonly >
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 label-control" asp-for="Carrier">
+                                                            Carrier
+                                                        </label>
+                                                        <div class="col-md-6">
+                                                            <select class="form-control form-control-2" id="basicSelect" asp-for="Carrier">
+                                                                <option>Select Option</option>
+                                                                <option>Option 1</option>
+                                                                <option>abc</option>
+                                                                <option>Option 3</option>
+                                                                <option>Option 4</option>
+                                                                <option>Option 5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 label-control" asp-for="VendorName">
+                                                            Vendor Name<span class="required">*</span>
+                                                        </label>
+                                                        <div class="col-md-6">
+                                                            <input asp-for="VendorName" type="text" class="form-control" name="country_code"
+                                                                   pattern="^[a-zA-Z0-9 ]+$" title="A-Z a-z 0-9 ' '">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 label-control" asp-for="PurchaseOrderDate">
+                                                            Purchase Order Date
+                                                        </label>
+                                                        <div class="col-md-6">
+
+                                                            <input asp-for="PurchaseOrderDate" type="date" class="form-control" name="date" data-validation-regex-message="Enter Valid Date">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 label-control" asp-for="PurchaseOrderTime">
+                                                            Purchase Order Time
+                                                        </label>
+                                                        <div class="col-md-6">
+                                                            <input asp-for="PurchaseOrderTime" type="time" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 label-control" asp-for="DueDate">
+                                                            Due Date
+                                                        </label>
+                                                        <div class="col-md-6">
+
+                                                            <input asp-for="DueDate" type="date" class="form-control" name="date" data-validation-regex-message="Enter Due Date">
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 label-control" asp-for="ExciseDuty">
+                                                            Excise Duty
+                                                        </label>
+                                                        <div class="col-md-6">
+                                                            <input asp-for="ExciseDuty" type="text" class="form-control" name="Excise_Duty">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 label-control" asp-for="SalesCommission">
+                                                            Sales Commission
+                                                        </label>
+                                                        <div class="col-md-6">
+                                                            <div class="input-group">
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text">$</span>
+                                                                </div>
+                                                                <input asp-for="SalesCommission" type="number" name="onlyNum" class="form-control" required data-validation-required-message="This field is required">
+                                                                <div class="input-group-append">
+                                                                    <span class="input-group-text">.00</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 label-control" asp-for="Status">
+                                                            Status
+                                                        </label>
+                                                        <div class="col-md-6">
+                                                            <input asp-for="Status" type="text" class="form-control" name="country_code"
+                                                                   pattern="^[a-zA-Z0-9 ]+$" title="A-Z a-z 0-9 ' '">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 label-control" asp-for="AssignedTo">
+                                                            Assigned To
+                                                        </label>
+                                                        <div class="col-md-6">
+                                                            <input asp-for="AssignedTo" type="text" class="form-control" name="country_code"
+                                                                   pattern="^[a-zA-Z0-9 ]+$" title="A-Z a-z 0-9 ' '">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 label-control" asp-for="CreatedBy">
+                                                            Created By
+                                                        </label>
+                                                        <div class="col-md-6">
+                                                            <input asp-for="CreatedBy" type="text" class="form-control" name="country_code"
+                                                                   pattern="^[a-zA-Z0-9 ]+$" title="A-Z a-z 0-9 ' '">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 label-control" asp-for="ModifiedBy">
+                                                            Modified By
+                                                        </label>
+                                                        <div class="col-md-6">
+                                                            <input asp-for="ModifiedBy" type="text" class="form-control" name="country_code"
+                                                                   pattern="^[a-zA-Z0-9 ]+$" title="A-Z a-z 0-9 ' '">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="form-body">
+                                                    <h4 class="form-section">
+                                                        <i class="ft-map-pin"></i>Address Information
+                                                    </h4>
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 label-control" asp-for="BillingAddressStreet">Street</label>
+                                                        <div class="col-md-6">
+                                                            <input asp-for="BillingAddressStreet" type="text" id="projectinput1" class="form-control" placeholder="Street Name"
+                                                                   name="stname">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 label-control" asp-for="BillingAddressCity">City</label>
+                                                        <div class="col-md-6">
+                                                            <input asp-for="BillingAddressCity" type="text" id="projectinput2" class="form-control" placeholder="City"
+                                                                   name="lname">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 label-control" asp-for="BillingAddressState">State</label>
+                                                        <div class="col-md-6">
+                                                            <input asp-for="BillingAddressState" type="text" id="projectinput3" class="form-control" placeholder="E-mail" name="state">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 label-control" asp-for="BillingAddressZip">Zip</label>
+                                                        <div class="col-md-6">
+                                                            <input asp-for="BillingAddressZip" type="text" id="projectinput4" class="form-control" placeholder="Zip Code" name="zip">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 label-control" asp-for="BillingAddressCountry" >Country</label>
+                                                        <div class="col-md-6">
+                                                            <select asp-for="BillingAddressCountry" title="" id="projectinput6" class="selectpicker countrypicker form-control" data-flag="true" name="country" ></select>
+                                                        </div>
+                                                    </div>
+                                                    <h4 class="form-section">
+                                                        <i class="ft-package"></i>Shipping Address
+                                                    </h4>
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 label-control" asp-for="ShippingAddressStreet">Street</label>
+                                                        <div class="col-md-6">
+                                                            <input type="text" id="projectinput1" class="form-control" placeholder="Street Name"
+                                                                   asp-for="ShippingAddressStreet" name="stname">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 label-control" asp-for="ShippingAddressCity">City</label>
+                                                        <div class="col-md-6">
+                                                            <input asp-for="ShippingAddressCity" type="text" id="projectinput2" class="form-control" placeholder="City"
+                                                                   name="lname">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 label-control" asp-for="ShippingAddressState">State</label>
+                                                        <div class="col-md-6">
+                                                            <input asp-for="ShippingAddressState" type="text" id="projectinput3" class="form-control" placeholder="State" name="state">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 label-control" asp-for="ShippingAddressZip">Zip</label>
+                                                        <div class="col-md-6">
+                                                            <input asp-for="ShippingAddressZip" type="text" id="projectinput4" class="form-control" placeholder="Zip Code" name="zip">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 label-control" asp-for="ShippingAddressCountry"  >Country</label>
+                                                        <div class="col-md-6">
+                                                            <select asp-for="ShippingAddressCountry" id="ClientId" class="selectpicker countrypicker form-control" data-flag="true" name="country"></select>
+                                                        </div>
+                                                    </div>
+
+                                                    <h4 class="form-section"><i class="ft-clipboard"></i> Product Details</h4>
+                                                    <div class="form-group row">
+                                                        <label asp-for="ProductName" class="col-md-3 label-control" for="timesheetinput1">
+                                                            Product Name *
+                                                        </label>
+                                                        <div class="col-md-6">
+                                                            <div class="position-relative">
+                                                                <input asp-for="ProductName" type="text" id="timesheetinput1" class="form-control" placeholder="Product Name" name="ProductName">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 label-control" asp-for="QuantityInStock">Quantity in Stock</label>
+                                                        <div class="col-md-6">
+                                                            <div class="position-relative">
+
+                                                                <input asp-for="QuantityInStock" type="number" name="noChar" class="form-control is-invalid">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 label-control" asp-for="Quantity">Quantity*</label>
+                                                        <div class="col-md-6">
+                                                            <div class="position-relative">
+
+                                                                <input asp-for="Quantity" type="number" name="noChar" class="form-control" required>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label asp-for="UnitPrice" class="col-md-3 label-control">Unit Price*</label>
+                                                        <div class="col-md-6">
+                                                            <div class="input-group">
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text">$</span>
+                                                                </div>
+                                                                <input asp-for="UnitPrice" type="text" class="form-control" placeholder="Rate Per Hour" aria-label="Amount (to the nearest dollar)"
+                                                                       name="rateperhour">
+                                                                <div class="input-group-append">
+                                                                    <span class="input-group-text">.00</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 label-control" asp-for="Total">Total</label>
+                                                        <div class="col-md-6">
+                                                            <div class="position-relative">
+                                                                <input asp-for="Total" type="text" id="timesheetinput5" class="form-control" name="total">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 label-control" asp-for="TermsAndConditions">
+                                                            Terms & Conditions
+                                                        </label>
+                                                        <div class="col-md-6">
+                                                            <div class="position-relative">
+                                                                <textarea asp-for="TermsAndConditions" id="timesheetinput7" rows="5" class="form-control" name="termscondition" placeholder="termscondition"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 label-control" asp-for="Description">
+                                                            Description
+                                                        </label>
+                                                        <div class="col-md-6">
+                                                            <div class="position-relative">
+                                                                <textarea asp-for="Description" id="timesheetinput7" rows="5" class="form-control" name="Description" placeholder="Description"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-actions right">
+                                                    <button type="button" class="btn btn-warning mr-1">
+                                                        <i class="ft-x"></i> Cancel
+                                                    </button>
+                                                    <button type="submit" class="btn btn-primary">
+                                                        <i class="fa fa-check-square-o"></i> Save
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
+                    <!-- // Basic form layout section end -->
+                </div>
+            </div>
+        </div>
+        <!-- ////////////////////////////////////////////////////////////////////////////-->
+        <footer class="footer footer-static footer-light navbar-shadow">
+            <p class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2">
+                <span class="float-md-left d-block d-md-inline-block">
+                    Copyright &copy; 2019 <a class="text-bold-800 grey darken-2" href="https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent"
+                                             target="_blank">Ecom Specialist</a>, All rights reserved.
+                </span>
+            </p>
+        </footer>
+        <!-- BEGIN VENDOR JS-->
+        <script src="~/app-assets/vendors/js/vendors.min.js" type="text/javascript"></script>
+        <!-- BEGIN VENDOR JS-->
+        <!-- BEGIN PAGE VENDOR JS-->
+        <script type="text/javascript" src="~/app-assets/vendors/js/ui/jquery.sticky.js"></script>
+        <script type="text/javascript" src="~/app-assets/vendors/js/charts/jquery.sparkline.min.js"></script>
+        <script src="~/app-assets/vendors/js/forms/spinner/jquery.bootstrap-touchspin.js"
+                type="text/javascript"></script>
+        <script src="~/app-assets/vendors/js/forms/icheck/icheck.min.js" type="text/javascript"></script>
+        <script src="~/app-assets/vendors/js/forms/toggle/switchery.min.js" type="text/javascript"></script>
+        <!-- END PAGE VENDOR JS-->
+        <!-- BEGIN STACK JS-->
+        <script src="~/app-assets/js/core/app-menu.js" type="text/javascript"></script>
+        <script src="~/app-assets/js/core/app.js" type="text/javascript"></script>
+        <script src="~/app-assets/js/scripts/customizer.js" type="text/javascript"></script>
+        <!-- END STACK JS-->
+        <!-- BEGIN PAGE LEVEL JS-->
+        <script type="text/javascript" src="~/app-assets/js/scripts/ui/breadcrumbs-with-stats.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+        <script src="~/app-assets/js/scripts/bootstrap-select-country.min.js"></script>
+        <script src="~/app-assets/vendors/js/forms/validation/jqBootstrapValidation.js"
+                type="text/javascript"></script>
+        <script src="~/app-assets/js/scripts/forms/validation/form-validation.js"
+                type="text/javascript"></script>
+        <!-- END PAGE LEVEL JS-->
+    </body>
+}
